@@ -13,6 +13,7 @@ textsurf2=Font.render('RR 2', False, 'white')
 textsurf3=Font.render('SPN 3', False, 'white')
 textsurf4=Font.render('SRT 4', False, 'white')
 running=True
+
 while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
