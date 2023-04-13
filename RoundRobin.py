@@ -6,7 +6,7 @@ pygame.init()
 
 screen=pygame.display.set_mode((1240,720))
 
-pygame.display.set_caption('First Come First Serve')
+pygame.display.set_caption('Round Robin')
 
 clock = pygame.time.Clock()
 
@@ -114,11 +114,33 @@ def RR(Entry, Ready):
     return 1
 
 
-def run(SchedulQ,Times):
+def run():
+    print("--------------------------------------------------")
+    print("Please the amount of Processes Done")
+    print("--------------------------------------------------")
+    print("--------------------------------------------------")
+    Total = int(input())
+    Processes = []
+    for x in range(Total):
+        print("For Process")
+        print(x)
+        print("")
+        print("Input the Arrival Time")
+        print("")
+        ArrTime = int(input())
+        print("")
+        print("Input the Running Time")
+        print("")
+        RunTime = int(input())
+        print("")
+        print("--------------------------------------------------")
+        Processes.append([x,ArrTime,RunTime,False])
+    print("How much time for each Process")
+    Times = input()
     global Storage, Entry, Ready,MaxTimer,Timer
     MaxTimer=Times
     Timer=Times
-    Storage=developEntry(SchedulQ)
+    Storage=developEntry(Processes)
     RI90s(Entry,Ready,Storage)
     return
 
@@ -145,5 +167,4 @@ def RI90s(Entry,Ready,Storage):
     
         clock.tick(2)
         
-
-run(Storage, 3)
+run()

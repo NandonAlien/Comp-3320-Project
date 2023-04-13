@@ -6,7 +6,7 @@ pygame.init()
 
 screen=pygame.display.set_mode((1240,720))
 
-pygame.display.set_caption('Shortest Process Next')
+pygame.display.set_caption('Shortest Remaining Time')
 
 clock = pygame.time.Clock()
 
@@ -111,9 +111,29 @@ def SRT(Entry):
 
 
 
-def run(SchedulQ):
+def run():
+    print("--------------------------------------------------")
+    print("Please the amount of Processes Done")
+    print("--------------------------------------------------")
+    print("--------------------------------------------------")
+    Total = int(input())
+    Processes = []
+    for x in range(Total):
+        print("For Process")
+        print(x)
+        print("")
+        print("Input the Arrival Time")
+        print("")
+        ArrTime = int(input())
+        print("")
+        print("Input the Running Time")
+        print("")
+        RunTime = int(input())
+        print("")
+        print("--------------------------------------------------")
+        Processes.append([x,ArrTime,RunTime,False])
     global Storage, Entry, Ready
-    Storage=developEntry(SchedulQ)
+    Storage=developEntry(Processes)
     RI90s(Entry,Ready,Storage)
     return
 
@@ -138,6 +158,7 @@ def RI90s(Entry,Ready,Storage):
             screen.blit(Font.render(str(x),False,"White"),(100,50*(x+1)))
         pygame.display.update()
     
-        clock.tick(1)
+        clock.tick(2)
+
+run()
         
-run(Storage)

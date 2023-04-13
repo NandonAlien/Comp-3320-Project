@@ -6,7 +6,7 @@ pygame.init()
 
 screen=pygame.display.set_mode((1240,720))
 
-pygame.display.set_caption('Shorte')
+pygame.display.set_caption('First Come First Serve')
 
 clock = pygame.time.Clock()
 
@@ -101,9 +101,29 @@ def FCFS(Entry, Ready):
     return 1
 
 
-def run(SchedulQ):
+def run():
+    print("--------------------------------------------------")
+    print("The amount of Processes Done")
+    print("--------------------------------------------------")
+    print("--------------------------------------------------")
+    Total = int(input())
+    Processes = []
+    for x in range(Total):
+        print("For Process")
+        print(x)
+        print("")
+        print("Input the Arrival Time")
+        print("")
+        ArrTime = int(input())
+        print("")
+        print("Input the Running Time")
+        print("")
+        RunTime = int(input())
+        print("")
+        print("--------------------------------------------------")
+        Processes.append([x,ArrTime,RunTime,False])
     global Storage, Entry, Ready
-    Storage=developEntry(SchedulQ)
+    Storage=developEntry(Processes)
     RI90s(Entry,Ready,Storage)
     return
 
@@ -128,6 +148,6 @@ def RI90s(Entry,Ready,Storage):
             screen.blit(Font.render(str(x),False,"White"),(100,50*(x+1)))
         pygame.display.update()
     
-        clock.tick(1)
+        clock.tick(2)
         
-run(Storage)
+run()
