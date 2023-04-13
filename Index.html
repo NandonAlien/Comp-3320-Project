@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Virtual Memory Subsystem</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Virtual Memory Subsystem</h1>
+    <div id="memory">
+      <div class="memory-row">
+        <div class="memory-address">0x00</div>
+        <div class="memory-cell" data-address="0"></div>
+        <div class="memory-cell" data-address="1"></div>
+        <!-- more cells... -->
+      </div>
+      <!-- more rows... -->
+    </div>
+    <div id="usage">
+      <div id="usage-bar">
+        <div id="usage-bar-fill"></div>
+      </div>
+      <div id="usage-text"></div>
+    </div>
+    <div id="controls">
+      <button id="load">Load Program</button>
+      <button id="unload">Unload Program</button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
