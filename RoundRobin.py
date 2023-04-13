@@ -136,7 +136,7 @@ def run():
         print("--------------------------------------------------")
         Processes.append([x,ArrTime,RunTime,False])
     print("How much time for each Process")
-    Times = input()
+    Times = int(input())
     global Storage, Entry, Ready,MaxTimer,Timer
     MaxTimer=Times
     Timer=Times
