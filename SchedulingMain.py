@@ -36,24 +36,20 @@ for x in range(Total):
     Processes.append([x,ArrTime,RunTime,False])
 
 
-Running = True
+if Schedulingtype == 1:
+    FirstCFirstS.run(Processes)
 
-while Running:
+elif Schedulingtype == 2:
+    print("How much time for each Process")
+    Times = input()
+    RoundRobin.run(Processes,Times)
+    
+elif Schedulingtype == 3:
+    ShortestPNext
 
-    if Schedulingtype == 1:
-        FirstCFirstS
-        Running == False
-    elif Schedulingtype == 2:
-        print("How much time for each Process")
-        Time = input()
-        RoundRobin
-        Running == False
-    elif Schedulingtype == 3:
-        ShortestPNext
-        Running == False
-    elif Schedulingtype == 4:
-        ShortestRT
-        Running == False
+elif Schedulingtype == 4:
+    ShortestRT
+
 
 #Process Below to be integrated Later
 
