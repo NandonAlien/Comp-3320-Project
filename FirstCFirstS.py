@@ -37,6 +37,8 @@ def developEntry(Storage):
     global Entry
     
     Entry =sorted(Storage, key=lambda x:x[1])
+    for x in Entry:
+        EBlock.append(x[2],0)
     return 
 
 def Reset():
@@ -44,13 +46,13 @@ def Reset():
     exit()
 
 def ProcessPrints(Batch):
-    size = 100
-    
     for x in Batch:
+        if x[2]
        
 
 
 #Process Scheduling Specific
+
 def FCFS(Entry, Ready):
     global Runs
 

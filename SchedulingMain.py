@@ -54,3 +54,85 @@ while Running:
     elif Schedulingtype == 4:
         ShortestRT
         Running == False
+
+#Process Below to be integrated Later
+
+def SRT(Entry, Ready):
+    global Runs
+
+    i = 0
+    while i == 0 and len(Entry) > 0:
+        if Entry[i].arrivalTime > 0:
+            i+=1
+        if Entry[i].arrivalTime == 0:
+            Ready.append(x)
+            Ready = sorted(Ready, key=lambda x: x.arrivalTime)
+            Entry.pop(0)
+    if len(Ready)==0 and len(Entry) == 0:
+        return 0
+    if Runs == False and len(Ready) > 0:
+        Ready[0].switchRun()
+        Runs = True
+    else:
+        if Ready[0].timeWeight ==0:
+            Ready[0].switchRun()
+            Ready.pop(0)
+            Runs = False
+        else:
+            Ready[0].DecrTimer()
+    return 1
+
+def RR(Entry, Ready):
+    global SliceNum
+    global Runs
+    global MaxTimer
+    global Timer
+    i = 0
+    while i == 0 and len(Entry) > 0:
+        if Entry[i].arrivalTime > 0:
+            i+=1
+        if Entry[i].arrivalTime == 0:
+            Ready.append(x)
+            Entry.pop(0)
+    if len(Ready)==0 and len(Entry) == 0:
+        return 0
+    if Runs == False and len(Ready) > 0:
+        Ready[SliceNum].switchRun()
+        Runs = True
+    else:
+        if Ready[SliceNum].timeWeight ==0:
+            Ready[SliceNum].switchRun()
+            Ready.pop(SlicNum)
+            Runs = False
+        elif Timer == 0:
+            SliceNum = (SliceNum+1)%len(Ready)
+            Timer = MaxTimer
+        else:
+            Ready[SliceNum].DecrTimer()
+            Timer-=1
+    return 1
+
+def SRT(Entry, Ready):
+    global Runs
+
+    i = 0
+    while i == 0 and len(Entry) > 0:
+        if Entry[i].arrivalTime > 0:
+            i+=1
+        if Entry[i].arrivalTime == 0:
+            Ready.append(x)
+            Ready = sorted(Ready, key=lambda x: x.arrivalTime)
+            Entry.pop(0)
+    if len(Ready)==0 and len(Entry) == 0:
+        return 0
+    if Runs == False and len(Ready) > 0:
+        Ready[0].switchRun()
+        Runs = True
+    else:
+        if Ready[0].timeWeight ==0:
+            Ready[0].switchRun()
+            Ready.pop(0)
+            Runs = False
+        else:
+            Ready[0].DecrTimer()
+    return 1

@@ -55,35 +55,6 @@ SlicNum =0
 MaxTimer = 0
 Timer=0
 
-def RR(Entry, Ready):
-    global SliceNum
-    global Runs
-    global MaxTimer
-    global Timer
-    i = 0
-    while i == 0 and len(Entry) > 0:
-        if Entry[i].arrivalTime > 0:
-            i+=1
-        if Entry[i].arrivalTime == 0:
-            Ready.append(x)
-            Entry.pop(0)
-    if len(Ready)==0 and len(Entry) == 0:
-        return 0
-    if Runs == False and len(Ready) > 0:
-        Ready[SliceNum].switchRun()
-        Runs = True
-    else:
-        if Ready[SliceNum].timeWeight ==0:
-            Ready[SliceNum].switchRun()
-            Ready.pop(SlicNum)
-            Runs = False
-        elif Timer == 0:
-            SliceNum = (SliceNum+1)%len(Ready)
-            Timer = MaxTimer
-        else:
-            Ready[SliceNum].DecrTimer()
-            Timer-=1
-    return 1
 
 
 #The Running of the Pygame

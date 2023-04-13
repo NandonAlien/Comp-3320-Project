@@ -53,30 +53,6 @@ def Reset():
     exit()
 
 #Process Scheduling Specific
-def SRT(Entry, Ready):
-    global Runs
-
-    i = 0
-    while i == 0 and len(Entry) > 0:
-        if Entry[i].arrivalTime > 0:
-            i+=1
-        if Entry[i].arrivalTime == 0:
-            Ready.append(x)
-            Ready = sorted(Ready, key=lambda x: x.arrivalTime)
-            Entry.pop(0)
-    if len(Ready)==0 and len(Entry) == 0:
-        return 0
-    if Runs == False and len(Ready) > 0:
-        Ready[0].switchRun()
-        Runs = True
-    else:
-        if Ready[0].timeWeight ==0:
-            Ready[0].switchRun()
-            Ready.pop(0)
-            Runs = False
-        else:
-            Ready[0].DecrTimer()
-    return 1
 
 #The Running of the Pygame
 while True:
