@@ -81,6 +81,8 @@ def RR(Entry, Ready):
         return 0
     if Runs == False and len(Ready) > 0:
         Ready[0][3]=True
+        if len(Ready) ==1:
+                Assign=0
         Wil=Storage.index(Supe[Assign])
         Storage[Wil][3]=True
         Runs = True
@@ -98,8 +100,11 @@ def RR(Entry, Ready):
             Timer=MaxTimer
             
         elif Timer ==0:
-            EBlock[Assign].Colour = "white"
+            Wil=Storage.index(Supe[Assign])
+            EBlock[Wil].Colour = "white"
             Assign=(Assign+1)%len(Ready)
+            if len(Ready) ==1:
+                Assign=0
             Timer=MaxTimer
             Runs=False   
         else:
